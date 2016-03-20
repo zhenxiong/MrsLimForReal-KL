@@ -391,7 +391,6 @@ p.copyright {
 	}
 
 	.sub-header-c {
-		color: #333333;
 		font-weight: bold;
 	}
 
@@ -425,9 +424,6 @@ p.copyright {
 		background-attachment: scroll;
 	}
 
-	.sub-header-c {
-		color: #333333;
-	}
 
 	#end {
 		height: 60%;
