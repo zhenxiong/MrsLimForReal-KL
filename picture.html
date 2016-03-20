@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Wedding of Zhen Xiong and Shi Yunn</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- font awesome CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- custom CSS -->
+	<link rel="stylesheet" type="text/css" href="./wedding.css">
+
+	<!-- Custom Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body>
+	<header class="pic-header">
+		<h1><a href="./index.html"><i class="fa fa-chevron-left"></i></a></h1>
+	</header>
+	<section class="content-section-b" id="ig">
+		<div>
+			<h1 class="sub-header"><i class="fa fa-instagram"></i>#MrsLimForReal</h1>
+			<hr class="divider">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+						<div id="instafeed"></div>
+						<a href="./picture.html"></a><div id="load-more">More</div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="./instafeed.min.js"></script>
+	<script type="text/javascript">
+		var loadButton = document.getElementById('load-more');
+	    var feed = new Instafeed({
+	        get: 'tagged',
+	        tagName: 'MrsLimForReal',
+	        limit: '15',
+	        userId: '42561469',
+        	accessToken: '42561469.745c638.209fb81ab545432aae80198e3177a3bb',
+        	resolution: 'low_resolution',
+	        useHttp: true,
+	        after: function() {
+            // disable button if no more results to load
+            if (!this.hasNext()) {
+                loadButton.setAttribute('disabled', 'disabled');
+            	}
+        	},
+	    });
+
+	    // bind the load more button
+    	loadButton.addEventListener('click', function() {
+        	feed.next();
+   		 });
+
+    	// run our feed!
+	    feed.run();
+	</script>
+</body>
+</html>
